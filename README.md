@@ -33,10 +33,7 @@
 
 ### 翻译
 
-1. 在 `docs/<locale>/...` 下镜像英文结构（例如 `docs/ja/installation/index.md`）。
-2. 复用既有 frontmatter 字段（如 `title`、`outline`），确保 VitePress 渲染一致。
-3. 截图或示意图尽量存放在对应语言目录下的 `images/` 文件夹。
-4. 在 PR 描述中列出涉及的语言，便于审查对齐程度。
+英文文档仓库：<https://github.com/rustfs/docs.rustfs.com>
 
 ## 本地开发
 
