@@ -1,47 +1,47 @@
 export const sidebar = [
   {
     text: 'RustFS 安装指南',
-    link: '/zh/installation/index',
+    link: '/installation/index',
     // collapsed: true,
     home: true,
     items: [
       {
         text: 'Linux安装',
-        link: '/zh/installation/linux/index',
+        link: '/installation/linux/index',
         items: [
           {
             text: 'Linux快速安装',
-            link: '/zh/installation/linux/quick-start'
+            link: '/installation/linux/quick-start'
           },
           {
             text: '单机单盘安装',
-            link: '/zh/installation/linux/single-node-single-disk'
+            link: '/installation/linux/single-node-single-disk'
           },
           {
             text: '单机多盘安装',
-            link: '/zh/installation/linux/single-node-multiple-disk'
+            link: '/installation/linux/single-node-multiple-disk'
           },
           {
             text: '多机多盘安装',
-            link: '/zh/installation/linux/multiple-node-multiple-disk'
+            link: '/installation/linux/multiple-node-multiple-disk'
           }
         ]
       },
       {
         text: 'Windows 安装',
-        link: '/zh/installation/windows/index'
+        link: '/installation/windows/index'
       },
       {
         text: 'macOS 安装',
-        link: '/zh/installation/macos/index'
+        link: '/installation/macos/index'
       },
       {
         text: 'Docker 安装',
-        link: '/zh/installation/docker/index'
+        link: '/installation/docker/index'
       },
       {
         text: '云原生安装',
-        link: '/zh/installation/cloud-native/index'
+        link: '/installation/cloud-native/index'
       },
     ]
   },
@@ -52,23 +52,23 @@ export const sidebar = [
     items: [
       {
         text: '硬件要求',
-        link: '/zh/installation/checklists/hardware-checklists'
+        link: '/installation/checklists/hardware-checklists'
       },
       {
         text: '硬件选择',
-        link: '/zh/installation/checklists/hardware-selection'
+        link: '/installation/checklists/hardware-selection'
       },
       {
         text: '网络检查',
-        link: '/zh/installation/checklists/network-checklists'
+        link: '/installation/checklists/network-checklists'
       },
       {
         text: '软件检查',
-        link: '/zh/installation/checklists/software-checklists'
+        link: '/installation/checklists/software-checklists'
       },
       {
         text: '安全检查',
-        link: '/zh/installation/checklists/security-checklists'
+        link: '/installation/checklists/security-checklists'
       }
     ]
   },
@@ -79,60 +79,60 @@ export const sidebar = [
     items: [
       {
         text: 'RustFS性能对比',
-        link: '/zh/concepts/comparison'
+        link: '/concepts/comparison'
       },
       {
         text: 'RustFS设计架构',
-        link: '/zh/concepts/architecture'
+        link: '/concepts/architecture'
       },
       {
         text: '术语说明',
-        link: '/zh/concepts/glossary'
+        link: '/concepts/glossary'
       },
       {
         text: '使用限制',
-        link: '/zh/concepts/limit'
+        link: '/concepts/limit'
       },
       {
         text: '核心概念',
         // collapsed: true,
-        link: '/zh/concepts/principle',
+        link: '/concepts/principle',
         items: [
           {
             text: '纠删码',
-            link: '/zh/concepts/principle/erasure-coding'
+            link: '/concepts/principle/erasure-coding'
           },
           // {
           //   text: '条带',
-          //   link: '/zh/concepts/principle/stripe'
+          //   link: '/concepts/principle/stripe'
           // },
           // {
           //   text: 'Data Scanner',
-          //   link: '/zh/concepts/principle/data-scanner'
+          //   link: '/concepts/principle/data-scanner'
           // },
           // {
           //   text: 'bitrot',
-          //   link: '/zh/concepts/principle/bitrot'
+          //   link: '/concepts/principle/bitrot'
           // },
           // {
           //   text: '数据自愈',
-          //   link: '/zh/concepts/principle/data-self-recovery',
+          //   link: '/concepts/principle/data-self-recovery',
           // },
           // {
           //   text: '使用限制',
-          //   link: '/zh/concepts/principle/limit'
+          //   link: '/concepts/principle/limit'
           // },
           // {
           //   text: '单机单盘',
-          //   link: '/zh/concepts/principle/snsd'
+          //   link: '/concepts/principle/snsd'
           // },
           // {
           //   text: '单机多盘',
-          //   link: '/zh/concepts/principle/snmd'
+          //   link: '/concepts/principle/snmd'
           // },
           // {
           //   text: '多机多盘',
-          //   link: '/zh/concepts/principle/mnmd'
+          //   link: '/concepts/principle/mnmd'
           // }
         ]
       },
@@ -145,63 +145,63 @@ export const sidebar = [
     items: [
       {
         text: '存储桶管理',
-        link: '/zh/management/bucket/index',
+        link: '/management/bucket/index',
         items: [
           {
             text: '存储桶创建',
-            link: '/zh/management/bucket/creation'
+            link: '/management/bucket/creation'
           },
           {
             text: '存储桶删除',
-            link: '/zh/management/bucket/deletion'
+            link: '/management/bucket/deletion'
           },
           // {
           //   text: '存储桶配额',
-          //   link: '/zh/management/bucket/bucket-quota'
+          //   link: '/management/bucket/bucket-quota'
           // },
           // {
           //   text: '存储桶复制管理',
-          //   link: '/zh/management/bucket/bucket-rep'
+          //   link: '/management/bucket/bucket-rep'
           // }
         ]
       },
       {
         text: '对象管理',
-        link: '/zh/management/object/index',
+        link: '/management/object/index',
         // collapsed: true,
         items: [
           {
             text: '对象上传',
-            link: '/zh/management/object/creation'
+            link: '/management/object/creation'
           },
           // {
           //   text: '对象下载',
-          //   link: '/zh/management/object/download'
+          //   link: '/management/object/download'
           // },
           {
             text: '对象删除',
-            link: '/zh/management/object/deletion'
+            link: '/management/object/deletion'
           },
           // {
           //   text: '对象分享',
-          //   link: '/zh/management/object/sharing',
+          //   link: '/management/object/sharing',
           // },
           // {
           //   text: '加密',
-          //   link: '/zh/management/encryption',
+          //   link: '/management/encryption',
           //   // collapsed: true,
           //   items: [
           //     {
           //       text: 'SSE-C',
-          //       link: '/zh/management/encryption/sse-c',
+          //       link: '/management/encryption/sse-c',
           //     },
           //     {
           //       text: 'SSE-KMS',
-          //       link: '/zh/encryption/sse-kms',
+          //       link: '/encryption/sse-kms',
           //     },
           //     {
           //       text: 'SSE-S3',
-          //       link: '/zh/management/encryption/sse-s3'
+          //       link: '/management/encryption/sse-s3'
           //     }
           //   ]
           // },
@@ -213,19 +213,19 @@ export const sidebar = [
       //   items: [
       //     {
       //       text: '开通对象版本',
-      //       link: '/zh/management/object-version/bucket-create-and-delete'
+      //       link: '/management/object-version/bucket-create-and-delete'
       //     },
       //     {
       //       text: '对象创建',
-      //       link: '/zh/management/object-version/bucket-repulication'
+      //       link: '/management/object-version/bucket-repulication'
       //     },
       //     {
       //       text: '对象回滚',
-      //       link: '/zh/management/object-version/object-rollback'
+      //       link: '/management/object-version/object-rollback'
       //     },
       //     {
       //       text: '对象历史版本查看',
-      //       link: '/zh/management/object-version/version-history'
+      //       link: '/management/object-version/version-history'
       //     }
       //   ]
       // },
@@ -235,56 +235,56 @@ export const sidebar = [
       //   items: [
       //     {
       //       text: '合规模式',
-      //       link: '/zh/management/iam/user',
+      //       link: '/management/iam/user',
       //     },
       //     {
       //       text: '保留模式',
-      //       link: '/zh/management/iam/user-group',
+      //       link: '/management/iam/user-group',
       //     },
       //     {
       //       text: '治理模式',
-      //       link: '/zh/management/iam/ak-sk',
+      //       link: '/management/iam/ak-sk',
       //     }
       //   ]
       // },
       {
         text: '对象扫描',
-        link: '/zh/management/object/scanner'
+        link: '/management/object/scanner'
       },
       // {
       //   text: '生命周期管理',
-      //   link: '/zh/management/lifecycle/index',
+      //   link: '/management/lifecycle/index',
       //   // collapsed: true,
       //   items: [
       //     {
       //       text: '对象过期',
-      //       link: '/zh/management/lifecycle/object-expire'
+      //       link: '/management/lifecycle/object-expire'
       //     },
       //     {
       //       text: '对象分层',
-      //       link: '/zh/management/lifecycle/object-layers'
+      //       link: '/management/lifecycle/object-layers'
       //     },
       //     {
       //       text: '与磁设备对接',
-      //       link: '/zh/management/lifecycle/magnetic-devices'
+      //       link: '/management/lifecycle/magnetic-devices'
       //     },
       //     {
       //       text: '与光设备对接',
-      //       link: '/zh/management/lifecycle/optical-devices'
+      //       link: '/management/lifecycle/optical-devices'
       //     }
       //   ]
       // },
       // {
       //   text: '事件通知管理',
-      //   link: '/zh/management/event-notifaction',
+      //   link: '/management/event-notifaction',
       //   items: [
       //     {
       //       text: '创建分层',
-      //       link: '/zh/'
+      //       link: '/'
       //     },
       //     {
       //       text: '添加事件源',
-      //       link: '/zh/'
+      //       link: '/'
       //     }
       //   ]
       // }
@@ -292,107 +292,107 @@ export const sidebar = [
   },
   {
     text: '升级、扩容和卸载',
-    link: '/zh/upgrade-scale/index',
+    link: '/upgrade-scale/index',
     // collapsed: true,
     home: true,
     items: [
       {
         text: '可用性和扩展说明',
-        link: '/zh/upgrade-scale/availability-and-resiliency'
+        link: '/upgrade-scale/availability-and-resiliency'
       },
       {
         text: '升级',
-        link: '/zh/upgrade-scale/upgrade',
-     },
+        link: '/upgrade-scale/upgrade',
+      },
       // {
       //   text: '扩容',
-      //   link: '/zh/upgrade-scale/scale',
+      //   link: '/upgrade-scale/scale',
       // },
       // {
       //   text: '退役',
-      //   link: '/zh/upgrade-scale/retire'
+      //   link: '/upgrade-scale/retire'
       // },
       // {
       //   text: '再平衡',
-      //   link: '/zh/upgrade-scale/re-balance'
+      //   link: '/upgrade-scale/re-balance'
       // },
       // {
       //   text: '卸载',
-      //   link: '/zh/upgrade-scale/uninstall'
+      //   link: '/upgrade-scale/uninstall'
       // }
     ]
   },
   {
     text: '故障排查',
-    link: '/zh/troubleshooting/index',
+    link: '/troubleshooting/index',
     // collapsed: true,
     home: true,
     items: [
       {
         text: '磁盘故障',
-        link: '/zh/troubleshooting/driver'
+        link: '/troubleshooting/driver'
       },
       {
         text: '对象检查与自动恢复',
-        link: '/zh/troubleshooting/healing'
+        link: '/troubleshooting/healing'
       },
       {
         text: '节点故障',
-        link: '/zh/troubleshooting/node'
+        link: '/troubleshooting/node'
       }
     ]
   },
   {
     text: '系统管理',
-    link: '/zh/administration/index',
+    link: '/administration/index',
     // collapsed: true,
     home: true,
     items: [
       {
         text: 'IAM管理',
-        link: '/zh/administration/iam',
+        link: '/administration/iam',
         items: [
           // {
           //   text: '用户',
-          //   link: '/zh/administration/user'
+          //   link: '/administration/user'
           // },
           // {
           //   text: '用户组',
-          //   link: '/zh/administration/user-group'
+          //   link: '/administration/user-group'
           // },
           // {
           //   text: 'AK/SK',
-          //   link: '/zh/administration/ak-sk'
+          //   link: '/administration/ak-sk'
           // },
           // {
           //   text: 'Policy',
-          //   link: '/zh/administration/policy'
+          //   link: '/administration/policy'
           // },
           // {
           //   text: '桶策略',
-          //   link: '/zh/administration/bucket-policy'
+          //   link: '/administration/bucket-policy'
           // },
           {
             text: '访问令牌',
-            link: '/zh/administration/iam/access-token'
+            link: '/administration/iam/access-token'
           }
         ]
       },
       // {
       //   text: '日志管理',
-      //   link: '/zh/administration/logs',
+      //   link: '/administration/logs',
       //   items: [
       //     {
       //       text: '日志配置',
-      //       link: '/zh/administration/logs/configuration'
+      //       link: '/administration/logs/configuration'
       //     },
       //     {
       //       text: 'Prometheus 配置',
-      //       link: '/zh/administration/logs/prometheus'
+      //       link: '/administration/logs/prometheus'
       //     },
       //     {
       //       text: '可观测配置',
-      //       link: '/zh/administration/logs/observility'
+      //       link: '/administration/logs/observility'
       //     }
       //   ]
       // }
@@ -405,27 +405,27 @@ export const sidebar = [
     items: [
       {
         text: 'Nginx反向代理配置',
-        link: '/zh/integration/nginx'
+        link: '/integration/nginx'
       },
       {
         text: '虚拟主机模式配置',
-        link: '/zh/integration/virtual'
+        link: '/integration/virtual'
       },
       {
         text: 'Milvus 对象存储配置',
-        link: '/zh/integration/milvus',
+        link: '/integration/milvus',
       },
       {
         text: 'GitLab 对象存储配置',
-        link: '/zh/integration/gitlab'
+        link: '/integration/gitlab'
       },
       {
         text: 'traefik 反向代理配置',
-        link: '/zh/integration/traefik'
+        link: '/integration/traefik'
       },
       {
         text: 'TLS 配置',
-        link: '/zh/integration/tls-configured'
+        link: '/integration/tls-configured'
       }
     ]
   },
@@ -436,58 +436,58 @@ export const sidebar = [
     items: [
       // {
       //   text: 'STS',
-      //   link: '/zh/developer/sts'
+      //   link: '/developer/sts'
       // },
       {
         text: 'MCP',
-        link: '/zh/developer/mcp'
+        link: '/developer/mcp'
       },
       {
         text: 'MinIO Client',
-        link: '/zh/developer/mc'
+        link: '/developer/mc'
       },
       {
         text: 'SDK',
-        link: '/zh/developer/sdk/index',
+        link: '/developer/sdk/index',
         // collapsed: true,
         items: [
           {
             text: 'Java',
-            link: '/zh/developer/sdk/java'
+            link: '/developer/sdk/java'
           },
           {
             text: 'Python',
-            link: '/zh/developer/sdk/python'
+            link: '/developer/sdk/python'
           },
           {
             text: 'Rust',
-            link: '/zh/developer/sdk/rust'
+            link: '/developer/sdk/rust'
           },
           {
             text: 'JavaScript',
-            link: '/zh/developer/sdk/javascript'
+            link: '/developer/sdk/javascript'
           },
           {
             text: 'TypeScript',
-            link: '/zh/developer/sdk/typescript'
+            link: '/developer/sdk/typescript'
           },
           {
             text: 'Golang',
-            link: '/zh/developer/sdk/go'
+            link: '/developer/sdk/go'
           },
           {
             text: '其他 SDK',
-            link: '/zh/developer/sdk/other'
+            link: '/developer/sdk/other'
           }
         ],
       },
       {
         text: 'S3 兼容性 API',
-        link: '/zh/developer/api'
+        link: '/developer/api'
       },
       {
         text: '开源许可证',
-        link: '/zh/developer/license'
+        link: '/developer/license'
       }
     ]
   },
@@ -498,35 +498,35 @@ export const sidebar = [
     items: [
       {
         text: '分布式',
-        link: '/zh/features/distributed/'
+        link: '/features/distributed/'
       },
       {
         text: '日志管理',
-        link: '/zh/features/logging/'
+        link: '/features/logging/'
       },
       {
         text: '版本控制',
-        link: '/zh/features/versioning/'
+        link: '/features/versioning/'
       },
       {
         text: 'S3 兼容',
-        link: '/zh/features/s3-compatibility/'
+        link: '/features/s3-compatibility/'
       },
       {
         text: '对象级与只读',
-        link: '/zh/features/worm/'
+        link: '/features/worm/'
       },
       {
         text: '跨区域复制',
-        link: '/zh/features/replication/'
+        link: '/features/replication/'
       },
       {
         text: '加密',
-        link: '/zh/features/encryption/'
+        link: '/features/encryption/'
       },
       {
         text: '生命周期管理',
-        link: '/zh/features/lifecycle/'
+        link: '/features/lifecycle/'
       },
     ],
   },
@@ -537,43 +537,43 @@ export const sidebar = [
     items: [
       {
         text: '现代数据湖',
-        link: '/zh/features/data-lake/'
+        link: '/features/data-lake/'
       },
       {
         text: 'AI 和机器学习',
-        link: '/zh/features/ai/'
+        link: '/features/ai/'
       },
       {
         text: '云原生',
-        link: '/zh/features/cloud-native/'
+        link: '/features/cloud-native/'
       },
       {
         text: '大数据计算存储分离',
-        link: '/zh/features/hdfs/'
+        link: '/features/hdfs/'
       },
       {
         text: 'SQL 支持',
-        link: '/zh/features/sql-server/'
+        link: '/features/sql-server/'
       },
       {
         text: '量化交易',
-        link: '/zh/features/quantitative-trading/'
+        link: '/features/quantitative-trading/'
       },
       {
         text: '制造业降本',
-        link: '/zh/features/industry/'
+        link: '/features/industry/'
       },
       {
         text: '冷归档存储',
-        link: '/zh/features/cold-archiving/'
+        link: '/features/cold-archiving/'
       },
       {
         text: '视频存储方案',
-        link: '/zh/features/video/'
+        link: '/features/video/'
       },
       {
         text: '国产信创和 SM 解决方案',
-        link: '/zh/features/domestic/'
+        link: '/features/domestic/'
       },
     ],
   },

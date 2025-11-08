@@ -7,7 +7,7 @@ export default defineAdditionalConfig({
 
   themeConfig: {
     nav: [
-      { text: '首页', link: 'https://rustfs.com' },
+      { text: '首页', link: 'https://rustfs.com.cn' },
       { text: '文档', link: '/' },
       { text: '安装', link: '/installation/linux' },
       { text: 'MCP', link: '/developer/mcp/' },
