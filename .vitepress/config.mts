@@ -7,7 +7,7 @@ const prod = !!process.env.VITEPRESS_PROD
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  title: 'RustFS',
+  title: 'RustFS 文档中心',
   description: 'RustFS - MinIO 国产化替代方案, 高性能分布式存储',
   lang: 'zh-Hans',
   ignoreDeadLinks: true,
