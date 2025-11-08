@@ -8,10 +8,8 @@ const prod = !!process.env.VITEPRESS_PROD
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   title: 'RustFS',
-  description: 'RustFS is a high-performance distributed object storage software built using Rust',
-  rewrites: {
-    'en/:rest*': ':rest*'
-  },
+  description: 'RustFS - MinIO 国产化替代方案, 高性能分布式存储',
+  lang: 'zh-Hans',
   ignoreDeadLinks: true,
   lastUpdated: true,
   cleanUrls: false,
@@ -20,7 +18,10 @@ export default defineConfig({
     siteTitle: false,
     logo: { src: '/images/logo.svg', height: 24 },
     logoLink: { link: 'https://rustfs.com', target: '_blank' },
-    editLink: { pattern: 'https://github.com/rustfs/docs.rustfs.com/edit/main/docs/:path' },
+    editLink: { 
+      pattern: 'https://github.com/rustfs/docs.rustfs.com.cn/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页面'
+    },
     socialLinks: [
       { icon: 'github', link: 'https://github.com/rustfs/rustfs' },
       { icon: 'twitter', link: 'https://twitter.com/rustfsofficial' },
@@ -29,133 +30,17 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
-        locales: {
-          zh: {
-            translations: {
-              button: {
-                buttonText: '搜索文档',
-                buttonAriaLabel: '搜索文档',
-              },
-              modal: {
-                noResultsText: '无法找到相关结果',
-                resetButtonTitle: '清除查询条件',
-                footer: {
-                  selectText: '选择',
-                  navigateText: '切换',
-                },
-              },
-            },
+        translations: {
+          button: {
+            buttonText: '搜索文档',
+            buttonAriaLabel: '搜索文档',
           },
-          tr: {
-            translations: {
-              button: {
-                buttonText: 'Belgeleri Ara',
-                buttonAriaLabel: 'Belgeleri Ara',
-              },
-              modal: {
-                noResultsText: 'İlgili sonuç bulunamadı',
-                resetButtonTitle: 'Sorgu koşullarını temizle',
-                footer: {
-                  selectText: 'Seç',
-                  navigateText: 'Geçiş yap',
-                },
-              },
-            },
-          },
-          ja: {
-            translations: {
-              button: {
-                buttonText: 'ドキュメントを検索',
-                buttonAriaLabel: 'ドキュメントを検索',
-              },
-              modal: {
-                noResultsText: '関連する結果が見つかりません',
-                resetButtonTitle: '検索条件をクリア',
-                footer: {
-                  selectText: '選択',
-                  navigateText: '切り替え',
-                },
-              },
-            },
-          },
-          fr: {
-            translations: {
-              button: {
-                buttonText: 'Rechercher la documentation',
-                buttonAriaLabel: 'Rechercher la documentation',
-              },
-              modal: {
-                noResultsText: 'Aucun résultat pertinent trouvé',
-                resetButtonTitle: 'Effacer les conditions de recherche',
-                footer: {
-                  selectText: 'Sélectionner',
-                  navigateText: 'Basculer',
-                },
-              },
-            },
-          },
-          de: {
-            translations: {
-              button: {
-                buttonText: 'Dokumentation durchsuchen',
-                buttonAriaLabel: 'Dokumentation durchsuchen',
-              },
-              modal: {
-                noResultsText: 'Keine relevanten Ergebnisse gefunden',
-                resetButtonTitle: 'Suchbedingungen löschen',
-                footer: {
-                  selectText: 'Auswählen',
-                  navigateText: 'Wechseln',
-                },
-              },
-            },
-          },
-          es: {
-            translations: {
-              button: {
-                buttonText: 'Buscar documentación',
-                buttonAriaLabel: 'Buscar documentación',
-              },
-              modal: {
-                noResultsText: 'No se encontraron resultados relevantes',
-                resetButtonTitle: 'Limpiar condiciones de búsqueda',
-                footer: {
-                  selectText: 'Seleccionar',
-                  navigateText: 'Cambiar',
-                },
-              },
-            },
-          },
-          ru: {
-            translations: {
-              button: {
-                buttonText: 'Поиск в документации',
-                buttonAriaLabel: 'Поиск в документации',
-              },
-              modal: {
-                noResultsText: 'Соответствующих результатов не найдено',
-                resetButtonTitle: 'Очистить условия поиска',
-                footer: {
-                  selectText: 'Выбрать',
-                  navigateText: 'Переключить',
-                },
-              },
-            },
-          },
-          ko: {
-            translations: {
-              button: {
-                buttonText: '문서 검색',
-                buttonAriaLabel: '문서 검색',
-              },
-              modal: {
-                noResultsText: '관련 결과를 찾을 수 없습니다',
-                resetButtonTitle: '검색 조건 지우기',
-                footer: {
-                  selectText: '선택',
-                  navigateText: '전환',
-                },
-              },
+          modal: {
+            noResultsText: '无法找到相关结果',
+            resetButtonTitle: '清除查询条件',
+            footer: {
+              selectText: '选择',
+              navigateText: '切换',
             },
           },
         },
@@ -202,19 +87,8 @@ export default defineConfig({
     ],
   ],
   srcDir: 'docs',
-  locales: {
-    root: { label: 'English' },
-    zh: { label: '简体中文' },
-    tr: { label: 'Türkçe' },
-    ja: { label: '日本語' },
-    fr: { label: 'Français' },
-    de: { label: 'Deutsch' },
-    es: { label: 'Español' },
-    ru: { label: 'Русский' },
-    ko: { label: '한국어' },
-  },
   sitemap: {
-    hostname: 'https://docs.rustfs.com',
+    hostname: 'https://docs.rustfs.com.cn',
   },
   markdown: {
     math: true,
@@ -230,33 +104,7 @@ export default defineConfig({
       // TODO: remove when https://github.com/vuejs/vitepress/issues/4431 is fixed
       const fence = md.renderer.rules.fence!
       md.renderer.rules.fence = function (tokens, idx, options, env, self) {
-        const { localeIndex = 'root' } = env
-        const codeCopyButtonTitle = (() => {
-          switch (localeIndex) {
-            case 'es':
-              return 'Copiar código'
-            case 'fa':
-              return 'کپی کد'
-            case 'ko':
-              return '코드 복사'
-            case 'pt':
-              return 'Copiar código'
-            case 'ru':
-              return 'Скопировать код'
-            case 'zh':
-              return '复制代码'
-            case 'tr':
-              return 'Kodu kopyala'
-            case 'ja':
-              return 'コードをコピー'
-            case 'fr':
-              return 'Copier le code'
-            case 'de':
-              return 'Code kopieren'
-            default:
-              return 'Copy code'
-          }
-        })()
+        const codeCopyButtonTitle = '复制代码'
         return fence(tokens, idx, options, env, self).replace(
           '<button title="Copy Code" class="copy"></button>',
           `<button title="${codeCopyButtonTitle}" class="copy"></button>`

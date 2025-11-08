@@ -1,118 +1,105 @@
-# RustFS Documentation Contribution Guide
+# RustFS 文档贡献指南
 
-Welcome to the RustFS community! We really appreciate your interest in contributing to our documentation. Your contribution, whether it's fixing a typo or translating an entire guide, is important to us. This guide aims to provide you with clear instructions to help you smoothly participate in the co-construction of RustFS documentation.
-
-<p align="center">
-English |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_ZH.md">简体中文</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_JA.md">日本語</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_DA.md">Deutsch</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_FR.md">Français</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_TR.md">Türkçe</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_ES.md">Español</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_KO.md">한국어</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_PT.md">Português</a> |
- <a href="https://github.com/rustfs/docs.rustfs.com/blob/main/README_RU.md">Русский</a>
-</p>
+欢迎来到 RustFS 社区！我们非常感谢您有兴趣为我们的文档做出贡献。您的每一份力量，无论是修正一个错字，还是完善整篇指南，都对我们至关重要。本指南旨在为您提供清晰的指引，帮助您顺利地参与到 RustFS 文档的共建中来。
 
 ------
 
-### Table of Contents
+### 目录
 
-1. (#1-what-is-rustfs)
-2. (#2-our-mission-accessible--secure-data-for-everyone)
-3. Your Contribution Journey
-   - (#31-getting-started-your-first-contribution)
-   - (#32-translating-the-documentation-adding-a-new-language)
-4. (#4-the-technical-workflow)
-   - Prerequisites
-   - (#42-local-development-setup)
-   - (#43-pull-request-pr--commit-guidelines)
-   - (#44-automated-checks--deployment)
-5. Community & Licensing
-   - Acknowledgements
-   - Content License
+1. (#1-rustfs-是什么)
+2. 我们的使命：让数据存储更普惠、更安全
+3. 您的贡献之旅
+   - 快速开始：您的第一个贡献
+   - 翻译文档：添加一门新语言
+4. 技术工作流程
+   - 环境准备
+   - 本地开发设置
+   - (#43-pull-request-pr-与提交规范)
+   - 自动化检查与部署
+5. 社区与许可
+   - 致谢
+   - 内容许可
 
-### 1. What is RustFS?
+### 1. RustFS 是什么？
 
-RustFS is a simple, high-performance, distributed object storage solution. It is 100% S3-compatible and released under the Apache 2.0 license, making it a commercially-friendly open-source software.
+RustFS 是一款简单、高效、分布式的对象存储解决方案。它 100% 兼容 S3 协议，并基于 Apache 2.0 许可发行，是一款对商业应用友好的开源软件。
 
-Written entirely in Rust—the modern programming language known for memory safety and exceptional performance 1—RustFS is developed by a global community of talented engineers. It is designed to be a powerful, reliable open-source alternative and can serve as a direct replacement for products like MinIO.2
+RustFS 完全采用 Rust 语言编写——这门以内存安全和卓越性能著称的现代编程语言 1。由来自世界各地的优秀工程师共同参与和贡献，RustFS 致力于提供一个强大、可靠的开源替代方案，可作为 MinIO 等产品的直接平替 2。
 
-### 2. Our Mission: Accessible & Secure Data for Everyone
+### 2. 我们的使命：让数据存储更普惠、更安全
 
-We believe that data storage should be affordable, reliable, and secure for everyone, everywhere.
+我们坚信，无论身处何地，每个人都应享有经济、可靠且安全的数据存储。
 
-High-quality, multilingual documentation is central to this mission. It's not just an add-on; it's key to lowering the barrier to entry for users and developers across the globe. When you translate a guide or fix an error, you are directly helping people in different linguistic communities to more easily build robust, cost-effective data infrastructure. Your contributions empower a global audience, collectively enhancing data security and sovereignty. This community-driven approach to knowledge sharing maximizes the project's value and helps us truly realize our vision.4
+高质量、多语言的文档是我们实现这一使命的核心。它不仅仅是项目的附属品，更是降低全球用户和开发者使用门槛的关键。当您翻译一篇指南或修正一个错误时，您正在直接帮助不同语言社区的人们更轻松地构建稳健、经济高效的数据基础设施。您的贡献将赋能全球用户，共同提升数据安全和数据主权的水平。这种社区驱动的知识共享模式，能够将项目的价值最大化，从而真正实现我们的愿景 4。
 
-### 3. Your Contribution Journey
+### 3. 您的贡献之旅
 
-We have designed different pathways for various types of contributors. Whether you want to quickly fix a small issue or systematically translate the entire documentation, you'll find the right guide here.
+我们为不同类型的贡献者设计了不同的参与路径。无论您是想快速修复一个小问题，还是希望系统性地翻译整个文档，这里都有适合您的指引。
 
-#### 3.1 Getting Started: Your First Contribution
+#### 3.1 快速开始：您的第一个贡献
 
-The easiest way to get started is by making small edits directly through the GitHub web interface. This method requires no local development setup and is perfect for minor changes.6
+对于新贡献者来说，最简单的参与方式是通过 GitHub 网页界面直接进行。这种方式无需在本地配置开发环境，非常适合进行小范围的修改 6。
 
-Simple contributions you can make include:
+您可以进行的简单贡献包括：
 
-- Fixing typos or grammatical errors.
-- Correcting broken links.
-- Clarifying confusing sentences or paragraphs.
-- Reporting an issue for something you don't know how to fix.
+- 修正拼写错误或语法问题。
+- 修复失效的链接。
+- 澄清模糊不清的句子或段落。
+- 如果您发现一个问题但不知如何修复，可以创建一个 Issue 来报告它。
 
-**The "5-Minute" Pull Request Process:**
+**“五分钟” Pull Request 流程：**
 
-1. Navigate to the page you want to edit on the documentation site `https://docs.rustfs.com/`.
-2. Scroll to the bottom and click the "Edit this page on GitHub" link.
-3. This will take you to the corresponding Markdown source file on GitHub. Click the pencil icon (✏️) in the top right to enter edit mode.
-4. Make your changes in the text editor.
-5. When you're done, scroll to the bottom. In the "Propose changes" section, write a concise commit message, e.g., "Fix typo in installation guide."
-6. Click the "Propose changes" button. GitHub will then guide you through the process of creating a pull request.
+1. 在文档网站 `https://docs.rustfs.com.cn/` 上找到您想编辑的页面。
+2. 滚动到页面底部，点击“在 GitHub 上编辑此页”链接。
+3. 这会将您带到 GitHub 上对应的 Markdown 源文件。点击右上角的铅笔图标 (✏️) 进入编辑模式。
+4. 在文本编辑器中进行您的修改。
+5. 完成后，滚动到页面底部。在“Propose changes”区域，填写简明扼要的提交信息，例如：“修正安装指南中的拼写错误”。
+6. 点击“Propose changes”按钮。GitHub 将引导您完成创建一个 Pull Request 的后续步骤。
 
-This process serves as an excellent "on-ramp for contributors," allowing you to familiarize yourself with our workflow without any complex setup. A successful lightweight contribution is often the first step toward deeper involvement.5
+这个流程是一个极佳的“贡献者入口”，可以让您在无需任何复杂设置的情况下熟悉我们的协作流程。一次成功的轻量级贡献，往往是参与更深度贡献的开始 5。
 
-#### 3.2 Translating the Documentation: Adding a New Language
+#### 3.2 翻译文档：添加一门新语言
 
-This is the core area where we most need community help. Please follow these steps to add or improve translations.
+这是我们最需要社区帮助的核心领域。请遵循以下步骤来添加或改进翻译。
 
-**Step 1: Coordinate via GitHub Issues**
+**第一步：通过 GitHub Issues 进行协调**
 
-To avoid duplicated work and ensure collaboration, please visit our **[GitHub Issues page](https://github.com/rustfs/rustfs/issues)** before you start translating.
+为了避免重复劳动和确保工作协同，请在开始翻译前访问我们的 **[GitHub Issues 页面](https://github.com/rustfs/rustfs/issues)**。
 
-- **Adding a New Language**: Check if someone else is already working on the language you want to translate. If not, please create a new issue with the title `[i18n] Add <Language> (<lang-code>) Translation`, e.g., `[i18n] Add German (de) Translation`. This helps us track progress and assign ownership.7
-- **Improving an Existing Translation**: If you want to improve an existing translation, find the relevant issue or create a new one detailing the improvements you plan to make.
+- **添加新语言**：检查是否已有其他人正在进行您想翻译的语言。如果没有，请创建一个新的 Issue，标题格式为 `[i18n] Add <Language> (<lang-code>) Translation`，例如：`[i18n] Add German (de) Translation`。这有助于我们追踪进度并指定负责人 7。
+- **改进现有翻译**：如果您想改进已有的翻译，可以查找相关的 Issue 或创建一个新的 Issue，详细说明您计划改进的内容。
 
-**Step 2: Understand the Directory Structure**
+**第二步：理解目录结构**
 
-Our documentation site is built with VitePress, which uses a file-based directory structure to manage multiple languages.9 All source files are located in the
+我们的文档站使用 VitePress 构建，它通过基于文件的目录结构来管理多语言内容 9。所有文档源文件都位于
 
-`docs/` directory.
+`docs/` 目录下。
 
 ```
 docs/
-├── en/                  # English (or as the root directory)
+├── en/                  # 英文 (或者作为根目录)
 │   ├── guide/
 │   │   └── getting-started.md
 │   └── index.md
-├── ja/                  # Japanese
+├── ja/                  # 日文
 │   ├── guide/
 │   │   └── getting-started.md
 │   └── index.md
 └──.vitepress/
-    └── config.ts        # VitePress configuration file
+    └── config.ts        # VitePress 配置文件
 ```
 
-**Step 3: Add a New Language Pack**
+**第三步：添加新的语言包**
 
-1. **Fork and clone** the repository to your local machine, then create a new branch.
+1. **Fork 并克隆** 仓库到您的本地，然后创建一个新的分支。
 
-2. In the `docs/` directory, create a new folder using the corresponding **ISO 639-1 language code** for your target language. Please refer to the language code table below.
+2. 在 `docs/` 目录下，根据您的目标语言，使用对应的 **ISO 639-1 语言代码** 创建一个新的文件夹。请参考下方的语言代码表。
 
-3. Copy the **entire contents** of `docs/en/` (or the English source files in the root) into your new language folder. This provides you with a complete file structure to translate.
+3. 将 `docs/en/` (或根目录下的英文源文件) 的**全部内容**复制到您新建的语言文件夹中。这为您提供了一个完整的、待翻译的文件结构。
 
-4. Open the `docs/.vitepress/config.ts` file and add a new entry for your language in the `locales` object.
+4. 打开 `docs/.vitepress/config.ts` 文件，在 `locales` 对象中为您的语言添加一个新的条目。
 
-   For example, to add German (`de`):
+   例如，要添加德语 (`de`)：
 
    TypeScript
 
@@ -121,19 +108,18 @@ docs/
    import { defineConfig } from 'vitepress'
 
    export default defineConfig({
-     //... other configs
+     //... 其他配置
      locales: {
        root: {
          label: 'English',
          lang: 'en'
        },
-       // Add the new locale config here
+       // 在这里添加新的语言配置
        de: {
-         label: 'Deutsch', // Text in the language dropdown
-         lang: 'de',       // HTML lang attribute
-         link: '/de/',     // Link to redirect to
-         // You can override theme configs for this locale,
-         // e.g., for navbar and sidebar text.
+         label: 'Deutsch', // 显示在语言切换菜单中的文本
+         lang: 'de',       // HTML lang 属性
+         link: '/de/',     // 点击后跳转的链接
+         // 在此可以覆盖特定语言的主题配置，例如导航栏和侧边栏文本
          themeConfig: {
            nav: [
              { text: 'Anleitung', link: '/de/guide/getting-started' }
@@ -149,82 +135,82 @@ docs/
    })
    ```
 
-   To help you configure this correctly, the following table explains the purpose of each property in the `locales` object.9
+   为了帮助您更好地理解配置，我们提供了以下表格，解释了 `locales` 对象中每个属性的作用 9。
 
-| Property      | Type     | Required | Description                                                  |
+| 属性          | 类型     | 是否必须 | 描述                                                         |
 | ------------- | -------- | -------- | ------------------------------------------------------------ |
-| `label`       | `string` | Yes      | The text that appears in the language selection dropdown menu in the navbar. |
-| `lang`        | `string` | No       | The `lang` attribute for the `<html>` tag. Uses the directory name if not specified. |
-| `link`        | `string` | No       | The link the user is redirected to when selecting this language. Defaults to the locale's root path (e.g., `/ja/`). |
-| `title`       | `string` | No       | Overrides the site's main title for this specific locale.    |
-| `description` | `string` | No       | Overrides the site's main description for this specific locale. |
-| `themeConfig` | `object` | No       | Locale-specific theme configuration. Used to translate navbar links, sidebar text, etc. |
+| `label`       | `string` | 是       | 在导航栏的语言选择下拉菜单中显示的文本。                     |
+| `lang`        | `string` | 否       | `<html>` 标签的 `lang` 属性。如果未指定，则使用目录名。      |
+| `link`        | `string` | 否       | 当用户选择此语言时重定向到的链接。默认为该语言的根路径（例如 `/ja/`）。 |
+| `title`       | `string` | 否       | 为此特定语言环境覆盖站点的主标题。                           |
+| `description` | `string` | 否       | 为此特定语言环境覆盖站点的主描述。                           |
+| `themeConfig` | `object` | 否       | 特定于语言环境的主题配置。用于翻译导航栏链接、侧边栏文本等。 |
 
 ```
-This table is designed to eliminate ambiguity in the configuration, ensuring contributors can get it right the first time and reducing the need for back-and-forth revisions.
+这张表格旨在消除配置中的不确定性，确保贡献者能够一次性正确地完成设置，从而减少了来回修改的需要。
 ```
 
-**Step 4: Translate the Content**
+**第四步：翻译内容**
 
-- In your new language directory, open the Markdown files one by one and translate the text content.
-- **Important**: Please **do not** translate the following:
-  - Keys in the frontmatter (e.g., `title:`, `layout:`).
-  - Any code within code blocks.
-  - URL links.
-  - HTML tags.
-- Only translate the human-readable text.
+- 在您新建的语言目录中，逐个打开 Markdown 文件并翻译其中的文本内容。
+- **重要提示**：请**不要**翻译以下内容：
+  - Frontmatter 中的键名 (例如 `title:`, `layout:`)。
+  - 代码块中的任何代码。
+  - URL 链接。
+  - HTML 标签。
+- 只需翻译人类可读的文本。
 
-**Step 5: Submit Your Pull Request**
+**第五步：提交您的 Pull Request**
 
-Once you've finished translating, please follow the(#43-pull-request-pr--commit-guidelines) to submit your contribution, and make sure to link it to the issue you created in Step 1.
+完成翻译后，请遵循(#43-pull-request-pr-与提交规范) 提交您的贡献，并确保将其关联到您在第一步中创建的 Issue。
 
-**Language Code Reference**
+**语言代码参考**
 
-To ensure consistency, please use the standard ISO 639-1 codes from the table below.13
+为保证一致性，请使用下表中标准的 ISO 639-1 代码 13。
 
-| Language             | ISO 639-1 Code  |
-| -------------------- | --------------- |
-| Chinese (Simplified) | `zh` or `zh-CN` |
-| English              | `en`            |
-| Japanese             | `ja`            |
-| German               | `de`            |
-| French               | `fr`            |
+| 语言        | ISO 639-1 代码  |
+| ----------- | --------------- |
+| 中文 (简体) | `zh` 或 `zh-CN` |
+| 英语        | `en`            |
+| 日语        | `ja`            |
+| 德语        | `de`            |
+| 法语        | `fr`            |
 
-### 4. The Technical Workflow
+### 4. 技术工作流程
 
-For developers who wish to make more substantial contributions locally (such as adding a new language pack or making extensive changes), please follow this technical workflow.
+对于希望在本地进行更深度贡献（如添加新语言包或进行大量修改）的开发者，请遵循以下技术流程。
 
-#### 4.1 Prerequisites
+#### 4.1 环境准备
 
-Before you begin, please ensure you have the following software installed on your system:
+在开始之前，请确保您的系统中安装了以下软件：
 
-- **Node.js**: Version `18.x` or higher.14 You can download it from the
+- **Node.js**: 版本 `18.x` 或更高 14。您可以从
 
-  [official Node.js website](https://nodejs.org/).
+  [Node.js 官网](https://nodejs.org/) 下载。
 
-- **Package Manager**: We recommend using `pnpm` for efficiency. You can install it globally with `npm install -g pnpm`. Alternatively, you can use `npm` or `yarn`.15
+- **包管理器**: 我们推荐使用 `pnpm` 以获得更高的效率。您可以通过 `npm install -g pnpm` 进行全局安装。当然，您也可以使用 `npm` 或 `yarn` 15。
 
-- **Git**: A version control system. You can download it from the [official Git website](https://git-scm.com/).
+- **Git**: 版本控制系统。您可以从 [Git 官网](https://git-scm.com/) 下载。
 
-#### 4.2 Local Development Setup
+#### 4.2 本地开发设置
 
-Follow this sequence of commands to run the documentation development server locally:
+请按照以下命令序列在本地启动文档开发服务器：
 
-1. Fork & Clone the Repository
+1. Fork 并克隆仓库
 
-   First, fork this repository on GitHub. Then, clone your fork to your local machine.
+   首先，在 GitHub 上 Fork 本仓库。然后将您的 Fork 克隆到本地。
 
    Bash
 
    ```
-   # Replace <YOUR_USERNAME> with your GitHub username
-   git clone https://github.com/<YOUR_USERNAME>/docs.rustfs.com.git
-   cd docs.rustfs.com
+   # 将 <YOUR_USERNAME> 替换为您的 GitHub 用户名
+   git clone https://github.com/<YOUR_USERNAME>/docs.rustfs.com.cn.git
+   cd docs.rustfs.com.cn
    ```
 
-2. Install Dependencies
+2. 安装依赖
 
-   Use pnpm to install all required project dependencies.
+   使用 pnpm 安装项目所需的所有依赖项。
 
    Bash
 
@@ -232,9 +218,9 @@ Follow this sequence of commands to run the documentation development server loc
    pnpm install
    ```
 
-3. Run the Development Server
+3. 启动开发服务器
 
-   This command will start a local development server with hot-reloading enabled.
+   此命令将启动一个本地开发服务器，并支持热重载。
 
    Bash
 
@@ -242,78 +228,78 @@ Follow this sequence of commands to run the documentation development server loc
    pnpm docs:dev
    ```
 
-4. Access the Site
+4. 访问站点
 
-   After successful execution, you should see output in your terminal similar to VitePress dev server running at: <http://localhost:5173/>. Open this URL in your browser to see the documentation site. Any changes you make to the Markdown files will be reflected instantly in the browser.15
+   执行成功后，您应该会在终端看到类似 VitePress dev server running at: <http://localhost:5173/> 的输出。在浏览器中打开该地址，即可看到正在运行的文档站点。您对 Markdown 文件所做的任何修改都会即时反映在浏览器中 15。
 
-#### 4.3 Pull Request (PR) & Commit Guidelines
+#### 4.3 Pull Request (PR) 与提交规范
 
-We follow a standardized workflow to ensure code quality and a clean project history.
+我们遵循一套标准化的工作流程，以确保代码质量和项目历史的清晰度。
 
-- **Branching Strategy**
+- **分支策略**
 
-  - Always create a new branch for your work. Do not commit directly to the `main` branch.
-  - Use a descriptive branch name, such as `feat/add-german-translation` or `fix/correct-s3-api-typo`.17
+  - 请始终为您的工作创建一个新的分支，不要直接在 `main` 分支上提交。
+  - 使用具有描述性的分支名称，例如 `feat/add-german-translation` 或 `fix/correct-s3-api-typo` 17。
 
-- Commit Message Convention
+- 提交信息规范
 
-  We adhere to the Conventional Commits specification. This helps us automate changelogs and makes the commit history easier to understand.
+  我们遵循 Conventional Commits 规范。这有助于我们自动化生成更新日志，并使提交历史更易于理解。
 
-  - **Format**: `<type>(<scope>): <subject>`
+  - **格式**: `<type>(<scope>): <subject>`
 
-  - **Examples**:
+  - **示例**:
 
-    - `feat(i18n): add initial french translation`
+    - `feat(i18n): add initial french translation` (新增功能：添加法语初步翻译)
 
-    - `fix(guide): correct typo in getting-started.md`
+    - `fix(guide): correct typo in getting-started.md` (修复 Bug：修正入门指南中的拼写错误)
 
-    - docs(contributing): update local development setup
+    - docs(contributing): update local development setup (文档：更新本地开发设置说明)
 
-      This structured approach is a best practice in many mature open-source projects.8
+      这种结构化的提交方式是许多成熟开源项目的最佳实践 8。
 
-- **Submitting a Pull Request**
+- **提交 Pull Request**
 
-  1. Push your branch to your fork: `git push -u origin your-branch-name`.
-  2. On GitHub, open a pull request from your fork to the `main` branch of the `rustfs/docs.rustfs.com` repository.
-  3. **Link the Issue**: In the PR description, use keywords like `Closes #123` or `Fixes #123` to link the issue you created earlier. This will automatically close the issue when the PR is merged, a key step in our workflow automation.7
-  4. **Write a Clear Description**: Clearly explain **what** you changed and **why**. If your changes are visual, please include before-and-after screenshots.5
+  1. 将您的分支推送到您的 Fork：`git push -u origin your-branch-name`。
+  2. 在 GitHub 上，从您的 Fork 向 `rustfs/docs.rustfs.com.cn` 仓库的 `main` 分支发起一个 Pull Request。
+  3. **关联 Issue**：在 PR 的描述中，使用关键词如 `Closes #123` 或 `Fixes #123` 来关联您之前创建的 Issue。这将在 PR 合并时自动关闭该 Issue，是实现工作流自动化的关键一步 7。
+  4. **清晰的描述**：在 PR 描述中，清晰地解释您**做了什么**以及**为什么**。如果您的更改涉及视觉变化，请附上前后对比的截图 5。
 
-- **The Review Process**
+- **代码审查流程**
 
-  - Once you submit a PR, a project maintainer will review it.
-  - We may request changes. Please don't be discouraged! This is a normal part of collaborative open-source development aimed at improving the quality of contributions.
-  - Once your PR is approved and all automated checks have passed, a maintainer will merge it.
+  - 提交 PR 后，项目维护者会对其进行审查。
+  - 我们可能会提出修改建议。请不要因此感到沮ら。这是开源协作中非常正常的一部分，旨在共同提升贡献的质量。
+  - 一旦您的 PR 被批准且所有自动化检查都通过后，维护者会将其合并。
 
-#### 4.4 Automated Checks & Deployment
+#### 4.4 自动化检查与部署
 
-To ensure the quality and stability of our documentation, we have a fully automated CI/CD (Continuous Integration/Continuous Deployment) pipeline.
+为了保证文档的质量和稳定性，我们建立了一套完全自动化的 CI/CD (持续集成/持续部署) 流程。
 
-- **Automated Checks**: When you submit a pull request, GitHub Actions will automatically run a series of checks. These checks verify that the documentation site builds successfully and that the code formatting is correct (linting).19
-- **Automated Deployment**: Once your PR is merged into the `main` branch, GitHub Actions will trigger again, automatically building the latest version of the site and deploying it to `https://docs.rustfs.com`.
+- **自动化检查**：当您提交一个 Pull Request 时，GitHub Actions 会自动运行一系列检查。这些检查会验证文档站点是否能成功构建，并检查代码格式是否符合规范 (Linting) 19。
+- **自动部署**：一旦您的 PR 被合并到 `main` 分支，GitHub Actions 会再次触发，自动构建最新的文档站点，并将其部署到 `https://docs.rustfs.com.cn`。
 
-By making this process transparent, we aim to build contributor trust in our workflow. You don't need to worry about the deployment details; a successful merge means a successful deployment. This gives you a clear view of the entire lifecycle of your contribution, from submission to publication.19
+通过明确这一自动化流程，我们希望建立贡献者对项目流程的信任。您无需担心部署的细节，一次成功的合并即代表着一次成功的上线。这让您能够清晰地看到自己贡献的完整生命周期，从提交代码到最终发布 19。
 
-### 5. Community & Licensing
+### 5. 社区与许可
 
-#### 5.1 Acknowledgements
+#### 5.1 致谢
 
-The RustFS documentation is built by the community, for the community. We are incredibly grateful to everyone who contributes their time and expertise.
+RustFS 的文档是由社区构建，并服务于社区的。我们对每一位贡献者付出的时间和专业知识表示由衷的感谢。
 
-Every contribution, no matter how small, is highly valued. To fairly and transparently recognize all contributions, we use GitHub's built-in tools.
+每一份贡献，无论大小，都弥足珍贵。为了公平、透明地记录所有贡献，我们使用 GitHub 提供的工具来展示每一位贡献者的努力。
 
-You can see a list of all our amazing contributors on the **[Contributors graph](https://github.com/rustfs/docs.rustfs.com/graphs/contributors)**. This automated, scalable approach ensures that every contribution is acknowledged and always up-to-date.22
+您可以在 **[贡献者图谱](https://github.com/rustfs/docs.rustfs.com.cn/graphs/contributors)** 中查看我们所有杰出贡献者的列表。这种自动化、可扩展的方式确保了每一份贡献都能得到应有的认可，且永远保持最新 22。
 
-#### 5.2 Content License
+#### 5.2 内容许可
 
-All documentation in this project is licensed under the **Creative Commons Attribution 4.0 International License**.23
+本项目的所有文档内容均采用 **知识共享署名 4.0 国际许可协议 (Creative Commons Attribution 4.0 International License)** 进行许可 23。
 
-By contributing to the RustFS documentation project, you agree that your contributions will be released under this license.
+当您向 RustFS 文档项目提交贡献时，即表示您同意您的贡献将以此许可证发布。
 
-Under this license, you are free to:
+根据此许可，您可以自由地：
 
-- **Share** — copy and redistribute the material in any medium or format.
-- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
+- **共享** — 在任何媒介以任何形式复制、发行本作品。
+- **演绎** — 修改、转换或以本作品为基础进行创作，可用于任何目的，甚至商业目的。
 
-You must follow these terms:
+您只需遵守以下条件：
 
-- **Attribution** — You must give **appropriate credit**, provide a link to the license, and **indicate if changes were made**. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.23
+- **署名 (Attribution)** — 您必须给出**适当的署名**，提供指向本许可的链接，同时**标明是否（对原始作品）作了修改**。您可以用任何合理的方式来署名，但不得以任何方式暗示许可人为您或您的使用背书 23。

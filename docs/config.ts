@@ -1,20 +1,20 @@
-import { defineAdditionalConfig } from 'vitepress';
-import { sidebar } from './en/sidebar';
+import { defineAdditionalConfig } from 'vitepress'
+import { sidebar } from './sidebar'
 
 export default defineAdditionalConfig({
-  lang: 'en-US',
-  description: 'RustFS - MinIO alternative, high-performance distributed storage',
+  lang: 'zh-Hans',
+  description: 'RustFS - MinIO 国产化替代方案, 高性能分布式存储',
 
   themeConfig: {
     nav: [
-      { text: 'Home', link: 'https://rustfs.com' },
-      { text: 'Docs', link: '/' },
-      { text: 'Installation', link: '/installation/linux' },
+      { text: '首页', link: 'https://rustfs.com' },
+      { text: '文档', link: '/' },
+      { text: '安装', link: '/installation/linux' },
       { text: 'MCP', link: '/developer/mcp/' },
       { text: 'SDK', link: '/developer/sdk/' },
-      { text: 'Demo', link: 'https://play.rustfs.com' },
-      { text: 'Community', link: 'https://github.com/rustfs/rustfs/discussions' },
-      { text: 'About', link: '/about' },
+      { text: '演示', link: 'https://play.rustfs.com' },
+      { text: '社区', link: 'https://github.com/rustfs/rustfs/discussions' },
+      { text: '关于', link: '/about' },
     ],
 
     sidebar: {
@@ -22,13 +22,13 @@ export default defineAdditionalConfig({
     },
 
     editLink: {
-      pattern: 'https://github.com/rustfs/docs.rustfs.com/edit/main/docs/:path',
-      text: 'Edit this page on GitHub',
+      pattern: 'https://github.com/rustfs/docs.rustfs.com.cn/edit/main/docs/:path',
+      text: '在 GitHub 上编辑此页面'
     },
 
     footer: {
       message: 'Released under the Apache License 2.0.',
-      copyright: 'Copyright © 2025 RustFS',
-    },
-  },
-});
+      copyright: 'Copyright © 2025 RustFS'
+    }
+  }
+})
