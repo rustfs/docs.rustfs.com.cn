@@ -417,7 +417,7 @@ export const sidebar = [
       },
       {
         text: 'GitLab 对象存储配置',
-        link: '/integration/gitlab'
+        link: '/integration/harbor'
       },
       {
         text: 'Harbor 镜像存储服务配置',
