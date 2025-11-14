@@ -101,8 +101,8 @@ docker tag rustfs/rustfs:latest 1.2.3.4:8080/rustfs/test:1.0.0
 使用 push 命令将上面的镜像推送到 Harbor rustfs 项目中：
 
 ```
-docker push 74.176.187.53:8080/rustfs/test:1.0.0
-The push refers to repository [74.176.187.53:8080/rustfs/test]
+docker push 1.2.3.4:8080/rustfs/test:1.0.0
+The push refers to repository [1.2.3.4:8080/rustfs/test]
 c3bc499db1ab: Layer already exists 
 9398b321ad6a: Layer already exists 
 14d5f6cee2c2: Layer already exists 
