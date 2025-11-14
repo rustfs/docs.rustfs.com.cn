@@ -420,6 +420,10 @@ export const sidebar = [
         link: '/integration/gitlab'
       },
       {
+        text: 'Harbor 镜像存储服务配置',
+        link: '/integration/gitlab'
+      },
+      {
         text: 'traefik 反向代理配置',
         link: '/integration/traefik'
       },
