@@ -3,7 +3,7 @@ title: "RustFS traefik 反向代理配置指南"
 description: "使用 traefik 作为 RustFS 的反向代理，实现服务发现和负载均衡。"
 ---
 
-# 关于 traefki
+# 关于 traefik
 
 [traefik](https://doc.traefik.io/) 是一个开源的云原生应用程序代理，具有服务发现、请求路由以及负载均衡等功能。
 
