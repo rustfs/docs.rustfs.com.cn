@@ -43,3 +43,22 @@ http://test.rustfs.com/
 2. 如果是Linux修改 `/etc/default/rustfs` 文件，如果是Docker 或者 Kubernetes则修改yaml或者启动配置参数；
 3. 在配置文件中加入：`RUSTFS_SERVER_DOMAINS` , 将这个参数设置为 `RUSTFS_SERVER_DOMAINS = "rustfs.com"` ；
 4. 保存配置文件，然后使用 `systemctl restart rustfs` 重启服务。
+
+### 域名包含端口的情况（可选）
+
+如果你的域名是**通过端口号访问的**，那么在配置 `RUSTFS_SERVER_DOMAINS` 时，**必须同时包含端口号**，否则 Virtual Host Style 的请求将无法被正确识别。
+
+例如，当你的服务通过 `rustfs.com:9001` 对外提供访问时，应按如下方式配置：
+
+```ini
+RUSTFS_SERVER_DOMAINS = "rustfs.com:9001"
+```
+
+这样，以下形式的请求才能在 Virtual Host Style 模式下被正确解析：
+
+```
+http://test.rustfs.com:9001/
+```
+
+> ⚠️ 注意：
+> `RUSTFS_SERVER_DOMAINS` 的值必须与客户端请求中的 **Host 头完全一致**，如果访问时包含端口号，则配置中也必须包含该端口号。
