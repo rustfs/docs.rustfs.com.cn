@@ -160,17 +160,7 @@ java -cp target/rustfs-java-s3-demo-1.0-SNAPSHOT.jar com.example.RustfsS3Example
 
 > Presigned URL 允许客户端在不暴露凭据的情况下，临时访问私有对象，广泛用于浏览器直接上传或下载文件场景。
 
-#### 5.1.1 添加依赖（v2 SDK 的 URL 签名位于 `s3-presigner` 模块）
-
-```xml
-<dependency>
- <groupId>software.amazon.awssdk</groupId>
- <artifactId>s3-presigner</artifactId>
- <version>2.25.27</version>
-</dependency>
-```
-
-#### 5.1.2 生成下载链接（GET）
+#### 5.1.1 生成下载链接（GET）
 
 ```java
 import software.amazon.awssdk.services.s3.presigner.S3Presigner;
@@ -203,7 +193,7 @@ System.out.println("Presigned URL: " + presignedRequest.url());
 
 > 🔗 使用浏览器打开链接，即可访问该对象。
 
-#### 5.1.3 上传 Presigned URL（PUT）
+#### 5.1.2 上传 Presigned URL（PUT）
 
 类似地，也可生成上传 URL：
 
