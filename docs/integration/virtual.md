@@ -27,7 +27,7 @@ http://rustfs.com/test
 - 用户不用进行任何设置即为Path style模式
 
 
-## 2. Virtual Host Styl
+## 2. Virtual Host Style
 
 
 在启动的时，可以将模式改为Virtual Host Style。Virtual Host Style模式的特点是桶名在为域名的一部份，假设主机名为rustfs.com，桶名为test，那么Virtual Host Style拼接下来的路径为：
