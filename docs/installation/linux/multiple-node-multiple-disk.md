@@ -231,7 +231,7 @@ chown rustfs-user:rustfs-user  /data/rustfs*
 
 ## 四、下载安装包
 
-请先安装 wge 或者 curl 下载 rustfs 安装包。
+请先安装 wget 或者 curl 下载 rustfs 安装包。
 
 ```bash
 # 下载地址
