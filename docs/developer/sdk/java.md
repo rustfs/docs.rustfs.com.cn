@@ -18,10 +18,10 @@ rustfs-java-s3-demo/
 ├── pom.xml
 └── src/
  └── main/
- └── java/
- └── com/
- └── example/
- └── RustfsS3Example.java
+  └── java/
+   └── com/
+    └── example/
+     └── RustfsS3Example.java
 ```
 
 ### 1.2 添加依赖
@@ -30,11 +30,11 @@ rustfs-java-s3-demo/
 
 ```xml
 <dependencies>
- <dependency>
- <groupId>software.amazon.awssdk</groupId>
- <artifactId>s3</artifactId>
- <version>2.25.27</version>
- </dependency>
+  <dependency>
+    <groupId>software.amazon.awssdk</groupId>
+    <artifactId>s3</artifactId>
+    <version>2.25.27</version>
+  </dependency>
 </dependencies>
 ```
 
@@ -60,53 +60,53 @@ import java.nio.file.Paths;
 
 public class RustfsS3Example {
 
- public static void main(String[] args) {
- // 1. 初始化 S3 客户端
- S3Client s3 = S3Client.builder()
- .endpointOverride(URI.create("http://192.168.1.100:9000")) // RustFS 地址
- .region(Region.US_EAST_1) // 可写死，RustFS 不校验 region
- .credentialsProvider(
- StaticCredentialsProvider.create(
- AwsBasicCredentials.create("rustfsadmin", "rustfssecret")
- )
- )
- .forcePathStyle(true) // 关键配置！RustFS 需启用 Path-Style
- .build();
+  public static void main(String[] args) {
+    // 1. 初始化 S3 客户端
+    S3Client s3 = S3Client.builder()
+        .endpointOverride(URI.create("http://192.168.1.100:9000")) // RustFS 地址
+        .region(Region.US_EAST_1) // 可写死，RustFS 不校验 region
+        .credentialsProvider(
+            StaticCredentialsProvider.create(
+                AwsBasicCredentials.create("rustfsadmin", "rustfssecret")
+            )
+        )
+        .forcePathStyle(true) // 关键配置！RustFS 需启用 Path-Style
+        .build();
 
- // 2. 创建 Bucket
- String bucket = "my-bucket";
- try {
- s3.createBucket(CreateBucketRequest.builder().bucket(bucket).build());
- System.out.println("Bucket created: " + bucket);
- } catch (BucketAlreadyExistsException | BucketAlreadyOwnedByYouException e) {
- System.out.println("Bucket already exists.");
- }
+    // 2. 创建 Bucket
+    String bucket = "my-bucket";
+    try {
+      s3.createBucket(CreateBucketRequest.builder().bucket(bucket).build());
+      System.out.println("Bucket created: " + bucket);
+    } catch (BucketAlreadyExistsException | BucketAlreadyOwnedByYouException e) {
+      System.out.println("Bucket already exists.");
+    }
 
- // 3. 上传文件
- s3.putObject(
- PutObjectRequest.builder().bucket(bucket).key("hello.txt").build(),
- Paths.get("hello.txt")
- );
- System.out.println("Uploaded hello.txt");
+    // 3. 上传文件
+    s3.putObject(
+        PutObjectRequest.builder().bucket(bucket).key("hello.txt").build(),
+        Paths.get("hello.txt")
+    );
+    System.out.println("Uploaded hello.txt");
 
- // 4. 下载文件
- s3.getObject(
- GetObjectRequest.builder().bucket(bucket).key("hello.txt").build(),
- Paths.get("downloaded-hello.txt")
- );
- System.out.println("Downloaded hello.txt");
+    // 4. 下载文件
+    s3.getObject(
+        GetObjectRequest.builder().bucket(bucket).key("hello.txt").build(),
+        Paths.get("downloaded-hello.txt")
+    );
+    System.out.println("Downloaded hello.txt");
 
- // 5. 列出对象
- ListObjectsV2Response listResponse = s3.listObjectsV2(ListObjectsV2Request.builder().bucket(bucket).build());
- listResponse.contents().forEach(obj -> System.out.println("Found object: " + obj.key()));
+    // 5. 列出对象
+    ListObjectsV2Response listResponse = s3.listObjectsV2(ListObjectsV2Request.builder().bucket(bucket).build());
+    listResponse.contents().forEach(obj -> System.out.println("Found object: " + obj.key()));
 
- // 6. 删除对象
- s3.deleteObject(DeleteObjectRequest.builder().bucket(bucket).key("hello.txt").build());
- System.out.println("Deleted hello.txt");
+    // 6. 删除对象
+    s3.deleteObject(DeleteObjectRequest.builder().bucket(bucket).key("hello.txt").build());
+    System.out.println("Deleted hello.txt");
 
- // 7. 删除桶（可选）
- // s3.deleteBucket(DeleteBucketRequest.builder().bucket(bucket).build());
- }
+    // 7. 删除桶（可选）
+    // s3.deleteBucket(DeleteBucketRequest.builder().bucket(bucket).build());
+  }
 }
 ```
 
@@ -167,24 +167,24 @@ import software.amazon.awssdk.services.s3.presigner.S3Presigner;
 import software.amazon.awssdk.services.s3.presigner.model.GetObjectPresignRequest;
 
 S3Presigner presigner = S3Presigner.builder()
- .endpointOverride(URI.create("http://192.168.1.100:9000"))
- .region(Region.US_EAST_1)
- .credentialsProvider(
- StaticCredentialsProvider.create(
- AwsBasicCredentials.create("rustfsadmin", "rustfssecret")
- )
- )
- .build();
+    .endpointOverride(URI.create("http://192.168.1.100:9000"))
+    .region(Region.US_EAST_1)
+    .credentialsProvider(
+        StaticCredentialsProvider.create(
+            AwsBasicCredentials.create("rustfsadmin", "rustfssecret")
+        )
+    )
+    .build();
 
 GetObjectRequest getObjectRequest = GetObjectRequest.builder()
- .bucket("my-bucket")
- .key("hello.txt")
- .build();
+    .bucket("my-bucket")
+    .key("hello.txt")
+    .build();
 
 GetObjectPresignRequest presignRequest = GetObjectPresignRequest.builder()
- .getObjectRequest(getObjectRequest)
- .signatureDuration(Duration.ofMinutes(15)) // 有效期 15 分钟
- .build();
+    .getObjectRequest(getObjectRequest)
+    .signatureDuration(Duration.ofMinutes(15)) // 有效期 15 分钟
+    .build();
 
 PresignedGetObjectRequest presignedRequest = presigner.presignGetObject(presignRequest);
 
@@ -199,15 +199,15 @@ System.out.println("Presigned URL: " + presignedRequest.url());
 
 ```java
 PutObjectRequest putRequest = PutObjectRequest.builder()
- .bucket("my-bucket")
- .key("upload.txt")
- .build();
+    .bucket("my-bucket")
+    .key("upload.txt")
+    .build();
 
 PresignedPutObjectRequest presignedPut = presigner.presignPutObject(
- PutObjectPresignRequest.builder()
- .putObjectRequest(putRequest)
- .signatureDuration(Duration.ofMinutes(10))
- .build()
+    PutObjectPresignRequest.builder()
+        .putObjectRequest(putRequest)
+        .signatureDuration(Duration.ofMinutes(10))
+        .build()
 );
 
 System.out.println("Upload URL: " + presignedPut.url());
@@ -223,9 +223,9 @@ System.out.println("Upload URL: " + presignedPut.url());
 
 ```java
 CreateMultipartUploadRequest createRequest = CreateMultipartUploadRequest.builder()
- .bucket("my-bucket")
- .key("bigfile.zip")
- .build();
+    .bucket("my-bucket")
+    .key("bigfile.zip")
+    .build();
 
 CreateMultipartUploadResponse createResponse = s3.createMultipartUpload(createRequest);
 String uploadId = createResponse.uploadId();
@@ -236,21 +236,21 @@ String uploadId = createResponse.uploadId();
 ```java
 List<CompletedPart> completedParts = new ArrayList<>();
 for (int i = 1; i <= 3; i++) {
- String partPath = "part" + i + ".bin"; // 假设每个 part 为本地文件
- UploadPartRequest uploadPartRequest = UploadPartRequest.builder()
- .bucket("my-bucket")
- .key("bigfile.zip")
- .uploadId(uploadId)
- .partNumber(i)
- .build();
+  String partPath = "part" + i + ".bin"; // 假设每个 part 为本地文件
+  UploadPartRequest uploadPartRequest = UploadPartRequest.builder()
+      .bucket("my-bucket")
+      .key("bigfile.zip")
+      .uploadId(uploadId)
+      .partNumber(i)
+      .build();
 
- UploadPartResponse uploadPartResponse = s3.uploadPart(uploadPartRequest, Paths.get(partPath));
- completedParts.add(
- CompletedPart.builder()
- .partNumber(i)
- .eTag(uploadPartResponse.eTag())
- .build()
- );
+  UploadPartResponse uploadPartResponse = s3.uploadPart(uploadPartRequest, Paths.get(partPath));
+  completedParts.add(
+      CompletedPart.builder()
+          .partNumber(i)
+          .eTag(uploadPartResponse.eTag())
+          .build()
+  );
 }
 ```
 
@@ -258,15 +258,15 @@ for (int i = 1; i <= 3; i++) {
 
 ```java
 CompletedMultipartUpload completedUpload = CompletedMultipartUpload.builder()
- .parts(completedParts)
- .build();
+    .parts(completedParts)
+    .build();
 
 CompleteMultipartUploadRequest completeRequest = CompleteMultipartUploadRequest.builder()
- .bucket("my-bucket")
- .key("bigfile.zip")
- .uploadId(uploadId)
- .multipartUpload(completedUpload)
- .build();
+    .bucket("my-bucket")
+    .key("bigfile.zip")
+    .uploadId(uploadId)
+    .multipartUpload(completedUpload)
+    .build();
 
 s3.completeMultipartUpload(completeRequest);
 System.out.println("Multipart upload completed.");
@@ -276,10 +276,10 @@ System.out.println("Multipart upload completed.");
 
 ```java
 AbortMultipartUploadRequest abortRequest = AbortMultipartUploadRequest.builder()
- .bucket("my-bucket")
- .key("bigfile.zip")
- .uploadId(uploadId)
- .build();
+    .bucket("my-bucket")
+    .key("bigfile.zip")
+    .uploadId(uploadId)
+    .build();
 
 s3.abortMultipartUpload(abortRequest);
 ```
