@@ -67,7 +67,7 @@ public class RustfsS3Example {
  .region(Region.US_EAST_1) // 可写死，RustFS 不校验 region
  .credentialsProvider(
  StaticCredentialsProvider.create(
- AwsBasicCredentials.create("rustfsadmin", "rustfssecret")
+ AwsBasicCredentials.create("rustfsadmin", "rustfsadmin")
  )
  )
  .forcePathStyle(true) // 关键配置！RustFS 需启用 Path-Style
@@ -171,7 +171,7 @@ S3Presigner presigner = S3Presigner.builder()
  .region(Region.US_EAST_1)
  .credentialsProvider(
  StaticCredentialsProvider.create(
- AwsBasicCredentials.create("rustfsadmin", "rustfssecret")
+ AwsBasicCredentials.create("rustfsadmin", "rustfsadmin")
  )
  )
  .build();

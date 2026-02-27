@@ -32,7 +32,7 @@ RustFS 是一款兼容 Amazon S3 协议的对象存储服务，支持通过 Pyth
 ```
 Endpoint: http://192.168.1.100:9000
 AccessKey: rustfsadmin
-SecretKey: rustfssecret
+SecretKey: rustfsadmin
 ```
 
 ### 2.2 安装 Boto3
@@ -59,7 +59,7 @@ s3 = boto3.client(
  's3',
  endpoint_url='http://192.168.1.100:9000',
  aws_access_key_id='rustfsadmin',
- aws_secret_access_key='rustfssecret',
+ aws_secret_access_key='rustfsadmin',
  config=Config(signature_version='s3v4'),
  region_name='us-east-1'
 )
