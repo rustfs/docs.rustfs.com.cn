@@ -5,7 +5,7 @@ This playbook directs AI agents working in the RustFS documentation repository s
 ## 1. Repository Snapshot
 
 - Framework: VitePress; source files live in `docs/`, site-wide configuration in `.vitepress`.
-- Goal: produce documentation for a distributed object storage product aimed at a global audience, currently English-first with room for other locales.
+- Goal: produce documentation for a distributed object storage product aimed at a Chinese-speaking audience first, with room for other locales later.
 - Navigation: `docs/sidebar.ts` and `docs/config.ts` define the site structure; new pages must be reflected in these files immediately.
 
 ## 2. Core Principles
@@ -13,7 +13,7 @@ This playbook directs AI agents working in the RustFS documentation repository s
 1. **Accuracy**: Data, APIs, and commands must be reproducible; cite third-party information with a concise source note.
 2. **Consistency**: Match the existing file layout, naming, frontmatter, and heading hierarchy.
 3. **Minimal change**: Touch only files relevant to the task; avoid drive-by formatting or reordering.
-4. **Readability**: Use concise active-voice English; spell out technical terms once with their abbreviations (e.g., Large Language Model, LLM).
+4. **Readability**: Use concise Simplified Chinese by default; spell out technical terms once with their Chinese name and abbreviation when needed (for example, 大型语言模型，LLM).
 5. **Security**: Never commit secrets, tokens, or real certificates; scrub sensitive values from sample configs.
 
 ## 3. Recommended Workflow
@@ -41,6 +41,10 @@ This playbook directs AI agents working in the RustFS documentation repository s
 ## 4. Content and Language Rules
 
 - **Structure**: Start with context, then cover “Overview → Steps → References/Constraints.”
+- **Default language**: This repository is for the Chinese site. New headings, prose, button labels, navigation text, frontmatter, and metadata must default to Simplified Chinese unless the task explicitly requests another locale.
+- **Do not mix locales**: Do not leave English UI strings, placeholder copy, or untranslated section titles in Chinese pages. Product names, protocol names, and code identifiers may stay in English when standard.
+- **Chinese-site metadata**: Keep `lang`, `title`, `description`, navigation labels, and other site metadata aligned with Chinese content. Do not copy English-site metadata into this repository.
+- **Domain hygiene**: When linking Chinese documentation or site pages, prefer the `.cn` domain unless the destination only exists on another official domain.
 - **Terminology**: Bold or code-style the first mention of product/module names; wrap commands and filenames in backticks.
 - **Code blocks**: Include language hints (```bash,```rust, etc.) and provide runnable snippets only.
 - **Tables and media**: Tables need a header row; every image requires meaningful `alt` text.
@@ -55,6 +59,8 @@ This playbook directs AI agents working in the RustFS documentation repository s
    - Frontmatter is complete and valid.
    - Every relative path points to an existing file.
    - No new console warnings were introduced (missing default export, TS errors, etc.).
+   - Chinese pages do not contain accidental English UI or metadata strings.
+   - Chinese-site links and metadata point to the intended `.cn` destination.
 
 ## 6. Delivery Requirements
 
