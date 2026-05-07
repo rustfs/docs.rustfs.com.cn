@@ -34,7 +34,7 @@ RustFS 还支持通过 RustFS 控制台和 RustFS mc admin trace shell 命令实
 
 ## 架构
 
-**RustFS 通过与 Prometheus 兼容的 HTTP(S) 端点公开其指标，其中 Prometheus 服务提供对这些指标的推/拉访问。RustFS Kubernetes Operator 为每个预配置的 RustFS 租户部署一个独立的 Prometheus 服务，以抓取租户指标。组织还可以部署或利用他们自己的集中式 Prometheus 服务来抓取租户指标。**
+**RustFS 原生不支持通过 HTTP(S) 端点直接拉取指标数据。如需集成 Prometheus 监控体系，请部署 OpenTelemetry Collector，由其对 RustFS 的指标进行采集，并转发至 Prometheus 后端。RustFS Kubernetes Operator 为每个预配置的 RustFS 租户部署一个独立的 Prometheus 服务，以抓取租户指标。组织还可以部署或利用他们自己的集中式 Prometheus 服务来抓取租户指标。**
 
 ![架构图 1](images/s7-1.png)
 
