@@ -61,7 +61,7 @@ server {
       proxy_set_header X-Forwarded-Proto $scheme;
 
       # Disable Nginx from converting HEAD to GET
-      # proxy_cache_convert_head off;
+      proxy_cache_convert_head off;
 
       proxy_connect_timeout 300;
       # Default is HTTP/1, keepalive is only enabled in HTTP/1.1
@@ -101,7 +101,7 @@ server {
       proxy_set_header X-Forwarded-Proto $scheme;
 
       # Disable Nginx from converting HEAD to GET
-      # proxy_cache_convert_head off;
+      proxy_cache_convert_head off;
 
       proxy_connect_timeout 300;
       # Default is HTTP/1, keepalive is only enabled in HTTP/1.1
@@ -122,6 +122,18 @@ server {
 
 ~~~
 
+#### 重要说明
+
+> [!WARNING]
+> **关键配置项**
+> 
+> 在 Nginx 配置中**必须添加** `proxy_cache_convert_head off` 指令，原因如下：
+> 
+> - Nginx 默认会将 HEAD 请求转换为 GET 请求以便缓存
+> - 这种转换会导致 S3 V4 签名验证失败
+> - 症状表现为访问存储桶时报错 `Bucket not found` 或 `403 AccessDenied`
+> 
+> 参考 [Nginx 官方文档](http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_cache_convert_head)。
 
 ## 三、多机负载均衡
 
