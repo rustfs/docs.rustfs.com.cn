@@ -28,7 +28,7 @@ npm install @aws-sdk/client-s3 @aws-sdk/s3-request-presigner
 ```
 Endpoint: http://192.168.1.100:9000
 Access Key: rustfsadmin
-Secret Key: rustfssecret
+Secret Key: rustfsadmin
 ```
 
 ---
@@ -44,7 +44,7 @@ const s3 = new S3Client({
  region: "us-east-1", // 可随意填写
  credentials: {
  accessKeyId: "rustfsadmin",
- secretAccessKey: "rustfssecret",
+ secretAccessKey: "rustfsadmin",
  },
  forcePathStyle: true, // 必须启用 Path-style 以兼容 RustFS
  requestHandler: new NodeHttpHandler({
